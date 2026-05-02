@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORA — Meet Sora. A safety companion.</title>
+  <meta name="description" content="SORA is a women's safety companion. Four contextual modes on iPhone + Apple Watch. Submitted for Red Dot and iF Design Award 2026.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page-wide breathing pastel orbs -->
+  <div class="page-orbs" aria-hidden="true">
+    <span class="page-orb page-orb--1"></span>
+    <span class="page-orb page-orb--2"></span>
+    <span class="page-orb page-orb--3"></span>
+    <span class="page-orb page-orb--4"></span>
+    <span class="page-orb page-orb--5"></span>
+  </div>
+
+  <!-- ============ FLOATING PILL NAV ============ -->
+  <nav class="pill-nav">
+    <a href="#top" class="pill-nav__brand"><img src="assets/devices/logo.png" alt="Sora"></a>
+    <ul class="pill-nav__links">
+      <li><a href="#why" class="pill-nav__link">Why</a></li>
+      <li><a href="#modes" class="pill-nav__link">Modes</a></li>
+      <li><a href="#features" class="pill-nav__link">Features</a></li>
+      <li><a href="#network" class="pill-nav__link">Network</a></li>
+      <li><a href="#wearable" class="pill-nav__link">Wearable</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <h1 class="hero__headline" data-split="words">
+        <span class="hero__line">Meet Sora.</span>
+        <span class="hero__line"><em>A safety companion.</em></span>
+      </h1>
+
+      <p class="hero__sub">
+        Named after <em>soror</em> — Latin for sister. Sora protects you during specific moments.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#modes" class="btn btn--dark">
+          <span>See the modes</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#why" class="btn btn--ghost"><span>Why Sora</span></a>
+      </div>
+
+      <div class="hero__phones">
+        <figure class="device hero-phone hero-phone--left">
+          <img src="assets/devices/p_recents.png" alt="Recent journeys list">
+        </figure>
+        <figure class="device hero-phone hero-phone--center">
+          <img src="assets/devices/p_home.png" alt="SORA home with location and Walk me home action">
+        </figure>
+        <figure class="device hero-phone hero-phone--right">
+          <img src="assets/devices/p_modes.png" alt="Mode selector">
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ WHY (problem statement) ============ -->
+  <section class="section section--why" id="why">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Why Sora exists</span></span>
+      <h2 class="display display--lg" data-split="words">
+        1 in 3 women does not feel safe <em>in her own community.</em>
+      </h2>
+      <p class="lede center">
+        Sora offers companion modes for the moments that actually need them — the walk home, the first date, the late commute, the trip abroad.
+      </p>
+    </div>
+
+    <!-- Marquee ticker (values) -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Wisdom</span><span class="ticker__star">✶</span>
+        <span>Strength</span><span class="ticker__star">✶</span>
+        <span>Community</span><span class="ticker__star">✶</span>
+        <span>Held, not watched</span><span class="ticker__star">✶</span>
+        <span>Aura, not alert</span><span class="ticker__star">✶</span>
+        <span>Sisterhood, not surveillance</span><span class="ticker__star">✶</span>
+        <span>Wisdom</span><span class="ticker__star">✶</span>
+        <span>Strength</span><span class="ticker__star">✶</span>
+        <span>Community</span><span class="ticker__star">✶</span>
+        <span>Held, not watched</span><span class="ticker__star">✶</span>
+        <span>Aura, not alert</span><span class="ticker__star">✶</span>
+        <span>Sisterhood, not surveillance</span><span class="ticker__star">✶</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODES (click carousel with dots + arrows) ============ -->
+  <section class="section section--modes" id="modes">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Four contextual modes</span></span>
+      <h2 class="display display--lg" data-split="words">Protection that adapts <em>to the moment.</em></h2>
+      <p class="lede center">Each mode arms a different toolkit on phone and wrist. Click through to see how Sora shapes itself around her night.</p>
+    </div>
+
+    <div class="container">
+      <div class="carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <article class="slide slide--sky">
+              <div class="slide__media">
+                <figure class="device device--showcase"><img src="assets/devices/p_nightwalk.png" alt="Nightwalk active route"></figure>
+                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_nightwalk.png" alt="Apple Watch · Nightwalk"></figure>
+              </div>
+              <div class="slide__copy">
+                <span class="slide__num">01 · Mode</span>
+                <h3>Nightwalk</h3>
+                <p>Arms every tool before she steps outside after dark. Safe word, fake call, timed check-in — ready before she reaches the door.</p>
+                <ul class="check-list">
+                  <li><span class="check"></span>Route mapped to a guardian's eye</li>
+                  <li><span class="check"></span>Voice-triggered safe word</li>
+                  <li><span class="check"></span>Auto check-in on arrival</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="slide slide--blush">
+              <div class="slide__media">
+                <figure class="device device--showcase"><img src="assets/devices/p_date.png" alt="Date mode"></figure>
+                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_date.png" alt="Apple Watch · First Date"></figure>
+              </div>
+              <div class="slide__copy">
+                <span class="slide__num">02 · Mode</span>
+                <h3>Dating &amp; Nights Out</h3>
+                <p>Shares her venue with one trusted guardian. A discreet wearable squeeze is the only signal she needs to leave.</p>
+                <ul class="check-list">
+                  <li><span class="check"></span>Venue shared with one chosen guardian</li>
+                  <li><span class="check"></span>Fake-call exit, summoned from the wrist</li>
+                  <li><span class="check"></span>"On my way home" auto-disarms when she's safe</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="slide slide--mint">
+              <div class="slide__media">
+                <figure class="device device--showcase"><img src="assets/devices/p_commute.png" alt="Commute route"></figure>
+                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_commute.png" alt="Apple Watch · Commute"></figure>
+              </div>
+              <div class="slide__copy">
+                <span class="slide__num">03 · Mode</span>
+                <h3>Commute</h3>
+                <p>Learns her usual route. Notices when she doesn't take it. Alerts her circle silently, before she has to ask.</p>
+                <ul class="check-list">
+                  <li><span class="check"></span>Pattern learning, not constant tracking</li>
+                  <li><span class="check"></span>Silent deviation alerts to her circle</li>
+                  <li><span class="check"></span>Soft check-ins, never alarms</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="slide slide--lavender">
+              <div class="slide__media">
+                <figure class="device device--showcase"><img src="assets/devices/p_travel_safespots.png" alt="Travel safe spots in Tokyo"></figure>
+                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_travel.png" alt="Apple Watch · Traveling"></figure>
+              </div>
+              <div class="slide__copy">
+                <span class="slide__num">04 · Mode</span>
+                <h3>Traveling</h3>
+                <p>Bridges to local emergency services in any country. Curated safe spots near her location. Full offline functionality.</p>
+                <ul class="check-list">
+                  <li><span class="check"></span>Country-aware emergency dispatch</li>
+                  <li><span class="check"></span>Verified safe spots within walking distance</li>
+                  <li><span class="check"></span>Offline mode, no signal needed</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel__controls">
+          <button class="carousel__arrow" data-dir="-1" aria-label="Previous mode">
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4L6 8l4 4"/></svg>
+          </button>
+          <ol class="carousel__dots">
+            <li><button class="carousel__dot is-active" data-jump="0" aria-label="Nightwalk"></button></li>
+            <li><button class="carousel__dot" data-jump="1" aria-label="Dating"></button></li>
+            <li><button class="carousel__dot" data-jump="2" aria-label="Commute"></button></li>
+            <li><button class="carousel__dot" data-jump="3" aria-label="Traveling"></button></li>
+          </ol>
+          <button class="carousel__arrow" data-dir="1" aria-label="Next mode">
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l4 4-4 4"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES (soft pastel grid) ============ -->
+  <section class="section section--features" id="features">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Invisible protection</span></span>
+      <h2 class="display display--lg" data-split="words">No alarm. <em>No revealed distress.</em></h2>
+      <p class="lede center">Tools designed to look like nothing at all — to a stranger, to a date, to anyone watching.</p>
+    </div>
+
+    <div class="container">
+      <div class="feat-grid">
+        <article class="feat-card feat-card--coral">
+          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_fakecall_setup.png" alt="Fake call setup"></figure></div>
+          <h4>Fake Call</h4>
+          <p>One squeeze of the wearable surfaces a realistic incoming call.</p>
+        </article>
+        <article class="feat-card feat-card--lavender">
+          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_safeword_timer.png" alt="Safe word + timed check-in"></figure></div>
+          <h4>Safe Word + Timed Check-in</h4>
+          <p>A phrase recognized on-device. A countdown that quietly notifies her circle.</p>
+        </article>
+        <article class="feat-card feat-card--mint">
+          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_safety_tools.png" alt="Safety tools tray"></figure></div>
+          <h4>Safety Tools Tray</h4>
+          <p>Fake call, safe word, ghost call, route memory — one tap from any screen.</p>
+        </article>
+        <article class="feat-card feat-card--wide feat-card--blush">
+          <div class="feat-card__media feat-card__media--wide"><figure class="device device--feat"><img src="assets/devices/p_sos_tiers.png" alt="Emergency response with three tiers"></figure></div>
+          <div class="feat-card__copy">
+            <h4>Three-tier escalation</h4>
+            <p>Silent notify · Audio deterrent · Emergency dispatch. The response always matches the threat. Her circle is told before 911 is.</p>
+          </div>
+        </article>
+        <article class="feat-card feat-card--blue">
+          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_arrived.png" alt="Cheers, you arrived safely"></figure></div>
+          <h4>Arrival Confirm</h4>
+          <p>"Cheers, you arrived safely!" Her contacts know before she puts the phone down.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS (3 numbered colored cards) ============ -->
+  <section class="section section--how" id="how">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>How it works</span></span>
+      <h2 class="display display--lg" data-split="words">She speaks, taps, <em>or stays silent.</em></h2>
+      <p class="lede center">A voice trigger. A wrist tap. A network that already knows.</p>
+    </div>
+
+    <div class="container">
+      <div class="how__grid">
+        <article class="how-card how-card--blue">
+          <span class="how-card__num">01</span>
+          <div class="how-card__watermark"><span>Speak</span><span>Speak</span><span>Speak</span></div>
+          <div class="how-card__icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>
+          </div>
+          <h3 class="how-card__title">Speak the safe word</h3>
+          <p class="how-card__desc">A phrase she chose, recognized on-device. Spoken in any sentence, it triggers the protocol.</p>
+        </article>
+
+        <article class="how-card how-card--coral">
+          <span class="how-card__num">02</span>
+          <div class="how-card__watermark"><span>Squeeze</span><span>Squeeze</span><span>Squeeze</span></div>
+          <div class="how-card__icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+          </div>
+          <h3 class="how-card__title">Tap the watch</h3>
+          <p class="how-card__desc">Green for "I'm safe." Red to escalate to her circle. A long press calls 911 with location.</p>
+        </article>
+
+        <article class="how-card how-card--lavender">
+          <span class="how-card__num">03</span>
+          <div class="how-card__watermark"><span>Held</span><span>Held</span><span>Held</span></div>
+          <div class="how-card__icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="how-card__title">Held by a network</h3>
+          <p class="how-card__desc">Her circle gets a soft notification — knows what's happening before 911 is told.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NETWORK (dark) ============ -->
+  <section class="section section--network color-flip" id="network">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow pill-eyebrow--dark"><span class="pill-eyebrow__dot"></span><span>The network</span></span>
+      <h2 class="display display--lg display--light" data-split="words">Not surveillance. <em>Sisterhood.</em></h2>
+      <p class="lede lede--light center">When women know they're held by a network, the brain finally stops scanning.</p>
+    </div>
+
+    <div class="container">
+      <div class="net-grid">
+        <article class="net-card">
+          <div class="net-card__media"><figure class="device device--feat"><img src="assets/devices/p_circle.png" alt="Safety Circle"></figure></div>
+          <h4>Safety Circle</h4>
+          <p>Verified loved ones with real-time status — HOME, IN TRANSIT, AT WORK. Visible to her, never to strangers.</p>
+        </article>
+        <article class="net-card">
+          <div class="net-card__media"><figure class="device device--feat"><img src="assets/devices/p_community_feed.png" alt="Community feed"></figure></div>
+          <h4>Whisper Feed</h4>
+          <p>Neighborhood incidents posted by verified members. Useful, calm, never sensational.</p>
+        </article>
+        <article class="net-card">
+          <div class="net-card__media"><figure class="device device--feat"><img src="assets/devices/p_profile.png" alt="Profile"></figure></div>
+          <h4>Standing earned</h4>
+          <p>Guided journeys. Secured miles. Hours actively held. Standing earned through care, not engagement.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STEALTH ============ -->
+  <section class="section section--stealth color-flip">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow pill-eyebrow--dark"><span class="pill-eyebrow__dot"></span><span>Stealth mode</span></span>
+      <h2 class="display display--lg display--light" data-split="words">A quieter face <em>for the same protection.</em></h2>
+      <p class="lede lede--light center">Same flows, dark interface. Reads like a notes app at a glance.</p>
+    </div>
+
+    <div class="stealth-marquee">
+      <div class="stealth-marquee__track">
+        <figure class="device device--mid"><img src="assets/devices/p_stealth_home.png" alt="Stealth home"></figure>
+        <figure class="device device--mid"><img src="assets/devices/p_stealth_date.png" alt="Stealth date"></figure>
+        <figure class="device device--mid"><img src="assets/devices/p_stealth_network.png" alt="Stealth network"></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_home.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_date.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_network.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_home.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_date.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_network.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_home.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_date.png" alt=""></figure>
+        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_network.png" alt=""></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WEARABLE ============ -->
+  <section class="section section--wearable" id="wearable">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>The wearable</span></span>
+      <h2 class="display display--lg" data-split="words">Help, <em>at the speed of a wrist tap.</em></h2>
+      <p class="lede center">The watch surfaces only what matters in the moment — active mode, who's watching out, and a single tap to escalate.</p>
+    </div>
+
+    <div class="container">
+      <div class="watch-row">
+        <figure class="device device--watch-card"><img src="assets/devices/w_nightwalk.png" alt="Nightwalk"><figcaption>Nightwalk · check-in 4:32</figcaption></figure>
+        <figure class="device device--watch-card"><img src="assets/devices/w_date.png" alt="First Date"><figcaption>First Date · sharing with one</figcaption></figure>
+        <figure class="device device--watch-card"><img src="assets/devices/w_commute.png" alt="Commute"><figcaption>Commute · route shared</figcaption></figure>
+        <figure class="device device--watch-card"><img src="assets/devices/w_travel.png" alt="Traveling"><figcaption>Traveling · no danger nearby</figcaption></figure>
+      </div>
+
+      <dl class="interactions">
+        <div><dt>Tap (green)</dt><dd>I'm safe</dd></div>
+        <div><dt>Tap (red)</dt><dd>Escalate to her circle, silently</dd></div>
+        <div><dt>Long press</dt><dd>Emergency SOS — calls 911 with location</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT + TEAM ============ -->
+  <section class="section section--about" id="about">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>About &amp; team</span></span>
+      <h2 class="display display--lg" data-split="words">Built by women, <em>for women.</em></h2>
+      <p class="lede center">Four designers, one shared brief — to build safety that feels held, not watched.</p>
+    </div>
+
+    <div class="container">
+      <div class="team">
+        <div class="team__grid">
+          <figure class="team-card">
+            <div class="team-card__photo team-card__photo--sky"><span>—</span></div>
+            <figcaption>
+              <strong>Designer One</strong>
+              <span>Brand &amp; visual system</span>
+              <p>Set the warm, non-clinical tone — wordmark, palette, type, the feeling of being held.</p>
+            </figcaption>
+          </figure>
+          <figure class="team-card">
+            <div class="team-card__photo team-card__photo--blush"><span>—</span></div>
+            <figcaption>
+              <strong>Designer Two</strong>
+              <span>Mode flows &amp; app architecture</span>
+              <p>Designed the four contextual modes and the invisible escalation tiers that hold them together.</p>
+            </figcaption>
+          </figure>
+          <figure class="team-card">
+            <div class="team-card__photo team-card__photo--mint"><span>—</span></div>
+            <figcaption>
+              <strong>Designer Three</strong>
+              <span>Wearable &amp; glance UX</span>
+              <p>Reduced the watch to two taps and one breath — the fastest path from threat to circle.</p>
+            </figcaption>
+          </figure>
+          <figure class="team-card">
+            <div class="team-card__photo team-card__photo--lavender"><span>—</span></div>
+            <figcaption>
+              <strong>Designer Four</strong>
+              <span>Research &amp; community network</span>
+              <p>Talked to women, mapped the sisterhood layer, kept "held, not watched" honest at every step.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESIGN LANGUAGE ============ -->
+  <section class="section section--design">
+    <div class="container container--narrow center">
+      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Design language</span></span>
+      <h2 class="display display--lg" data-split="words">One gradient, <em>four atmospheres.</em></h2>
+      <p class="lede center">Sora's color system is built from a single dusk-to-dawn wash — the same gradient that opens the app. Each mode pulls one hue from it and bathes the screen in that color, so the phone <em>feels</em> like the moment you're in. Action colors stay constant across modes (indigo to act, coral to escalate, mint to confirm), so muscle memory is never broken when the atmosphere changes.</p>
+    </div>
+
+    <div class="container">
+      <div class="dl-modes">
+        <article class="dl-mode dl-mode--night" style="--c:#D9DEFB; --c-deep:#7C8BD6">
+          <span class="dl-mode__chip"></span>
+          <div class="dl-mode__head">
+            <h3>Nightwalk</h3>
+            <span class="dl-mode__hex">#D9DEFB · Periwinkle</span>
+          </div>
+          <p>The blue of streetlights on wet pavement. Cool, awake, vigilant without being anxious.</p>
+        </article>
+
+        <article class="dl-mode dl-mode--date" style="--c:#F8C9C2; --c-deep:#E97B6B">
+          <span class="dl-mode__chip"></span>
+          <div class="dl-mode__head">
+            <h3>Dating</h3>
+            <span class="dl-mode__hex">#F8C9C2 · Blush coral</span>
+          </div>
+          <p>Skin-warm and intimate, one shade away from the escalate-coral. Warmth and alertness live in the same family on purpose.</p>
+        </article>
+
+        <article class="dl-mode dl-mode--commute" style="--c:#C6E9DC; --c-deep:#3DA67A">
+          <span class="dl-mode__chip"></span>
+          <div class="dl-mode__head">
+            <h3>Commute</h3>
+            <span class="dl-mode__hex">#C6E9DC · Mint</span>
+          </div>
+          <p>"Go" green softened to a routine. The most ordinary mode gets the most reassuring color.</p>
+        </article>
+
+        <article class="dl-mode dl-mode--travel" style="--c:#E3D5F0; --c-deep:#A989C6">
+          <span class="dl-mode__chip"></span>
+          <div class="dl-mode__head">
+            <h3>Traveling</h3>
+            <span class="dl-mode__hex">#E3D5F0 · Lilac</span>
+          </div>
+          <p>The in-between hour. Unfamiliar, jet-lagged, dreamlike — borrowed from the middle of the splash gradient.</p>
+        </article>
+      </div>
+
+      <div class="dl-system">
+        <div class="dl-system__head">
+          <h4>The action layer</h4>
+          <p>Three colors that mean the same thing in every mode — so users learn the buttons once and never re-learn them.</p>
+        </div>
+        <div class="dl-system__row">
+          <div class="dl-action">
+            <span class="dl-action__chip" style="background:#4A5DBE"></span>
+            <div>
+              <strong>Indigo · Act</strong>
+              <span>Sora primary · #4A5DBE</span>
+              <p>The brand color. Walk me home. Start timer. Every primary button.</p>
+            </div>
+          </div>
+          <div class="dl-action">
+            <span class="dl-action__chip" style="background:#E97B6B"></span>
+            <div>
+              <strong>Coral · Escalate</strong>
+              <span>Alert accent · #E97B6B</span>
+              <p>Tier-3 emergency, watch alert bell, "Escalate" secondary CTA. Saved for one job.</p>
+            </div>
+          </div>
+          <div class="dl-action">
+            <span class="dl-action__chip" style="background:#3DA67A"></span>
+            <div>
+              <strong>Mint · Confirm</strong>
+              <span>Safety green · #3DA67A</span>
+              <p>"I'm safe" on the watch, Tier-1 silent notify, arrival check-in.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dl-stealth">
+        <div class="dl-stealth__copy">
+          <h4>Stealth · The dark variant</h4>
+          <p>When the screen can't be seen, the mode tint disappears entirely — only the action colors survive on near-black <code>#0F1115</code>. Indigo lifts to <code>#8A9BE8</code> for AA contrast. Same flows, quieter face.</p>
+        </div>
+        <div class="dl-stealth__bar">
+          <span style="background:#0F1115"></span>
+          <span style="background:#1C1F26"></span>
+          <span style="background:#8A9BE8"></span>
+          <span style="background:#E97B6B"></span>
+          <span style="background:#3DA67A"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container center">
+      <p class="footer__bridge">When the brain stops scanning for danger, it gets to think about everything else.</p>
+      <h2 class="display display--lg" data-split="words">Every woman deserves <em>to think freely.</em></h2>
+      <a href="#top" class="btn btn--dark">
+        <span>Back to top</span>
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="footer__meta">
+        <span>SORA · 2026</span>
+        <span>Submitted: Red Dot Design Award · iF Design Award</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
