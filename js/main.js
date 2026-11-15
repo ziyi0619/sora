@@ -5,6 +5,14 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // centre an item inside a sideways-scrolling row (nav links, mode tabs on phones)
+  var keepInView = function (box, el) {
+    if (!box || !box.scrollTo || box.scrollWidth <= box.clientWidth) return;
+    var r = el.getBoundingClientRect(), b = box.getBoundingClientRect();
+    box.scrollTo({ left: box.scrollLeft + (r.left - b.left) - (b.width - r.width) / 2, behavior: calm ? 'auto' : 'smooth' });
+  };
 
   /* ---------- The walk: scroll or drag moves Mei up Amsterdam Ave ---------- */
   var walk = $('#walk');
@@ -78,7 +86,7 @@
     scrub.addEventListener('input', function () {
       var span = walk.offsetHeight - window.innerHeight;
       var top = walk.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo(0, top + (scrub.value / 1000) * span);
+      window.scrollTo({ top: top + (scrub.value / 1000) * span, behavior: 'instant' });
     });
     scrub.addEventListener('pointerdown', function () { dragging = true; });
     window.addEventListener('pointerup', function () { dragging = false; });
@@ -218,6 +226,7 @@
       document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
     });
     section.setAttribute('data-mode', tab.dataset.mode);
+    keepInView(tab.parentNode, tab);
     if (focus) tab.focus();
   };
   tabs.forEach(function (tab, i) {
@@ -230,6 +239,21 @@
       if (e.key === 'End') next = tabs[tabs.length - 1];
       if (next) { e.preventDefault(); select(next, true); }
     });
+  });
+
+  // on touch screens, a sideways swipe on the phone moves to the next or previous mode
+  $$('.mode-panel').forEach(function (panel) {
+    var x0 = null, y0 = 0;
+    panel.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    panel.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+      x0 = null;
+      if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      var i = tabs.indexOf($('.tab[aria-selected="true"]'));
+      var next = tabs[clamp(i + (dx < 0 ? 1 : -1), 0, tabs.length - 1)];
+      if (next !== tabs[i]) select(next, false);
+    }, { passive: true });
   });
 
   /* ---------- Scroll reveals: fade up once, 12px, 0.4s ---------- */
@@ -256,7 +280,9 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         links.forEach(function (a) {
-          a.setAttribute('aria-current', a.getAttribute('href') === '#' + entry.target.id ? 'true' : 'false');
+          var on = a.getAttribute('href') === '#' + entry.target.id;
+          a.setAttribute('aria-current', on ? 'true' : 'false');
+          if (on) keepInView(a.parentNode, a);
         });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
