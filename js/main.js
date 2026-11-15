@@ -86,90 +86,85 @@
     render(progress());
   }
 
-  /* ---------- Hold for help: a long press, so a stray tap never sets it off ---------- */
+  /* ---------- Demo 1 · Hold for help, on the real walking screen ---------- */
   var hold = $('#hold-btn');
   if (hold) {
-    var note = $('#hold-note');
-    var label = $('.hold__label', hold);
-    var timer = null, done = false, resetTimer = null;
-    var start = function () {
-      if (done) return;
-      clearTimeout(resetTimer);
+    var toast = $('#hold-toast');
+    var holdTimer = null, toastTimer = null, held = false;
+    var say = function (msg, ms) {
+      clearTimeout(toastTimer);
+      toast.textContent = msg;
+      toast.classList.add('is-on');
+      toastTimer = setTimeout(function () { toast.classList.remove('is-on'); }, ms);
+    };
+    var press = function () {
+      if (held) return;
       hold.classList.add('is-holding');
-      timer = setTimeout(function () {
-        done = true;
+      holdTimer = setTimeout(function () {
+        held = true;
         hold.classList.remove('is-holding');
         hold.classList.add('is-done');
-        label.textContent = 'Held on purpose';
-        note.textContent = 'Held on purpose. A stray tap never counts.';
-        resetTimer = setTimeout(reset, 3200);
+        say('Held on purpose. That’s how SORA knows she means it.', 3000);
+        setTimeout(function () { held = false; hold.classList.remove('is-done'); }, 3000);
       }, 1500);
     };
-    var end = function () {
-      if (done || !hold.classList.contains('is-holding')) return;
-      clearTimeout(timer);
+    var release = function () {
+      if (held || !hold.classList.contains('is-holding')) return;
+      clearTimeout(holdTimer);
       hold.classList.remove('is-holding');
-      note.textContent = 'Let go early: nothing happens.';
+      say('Let go early. Nothing happens.', 2000);
     };
-    var reset = function () {
-      done = false;
-      hold.classList.remove('is-done');
-      label.textContent = 'Hold for help';
-      note.textContent = 'Press and hold';
-    };
-    hold.addEventListener('pointerdown', function (e) { e.preventDefault(); start(); });
-    ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) { hold.addEventListener(ev, end); });
+    hold.addEventListener('pointerdown', function (e) { e.preventDefault(); press(); });
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) { hold.addEventListener(ev, release); });
     hold.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-    hold.addEventListener('keydown', function (e) {
-      if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); start(); }
-    });
-    hold.addEventListener('keyup', function (e) {
-      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); end(); }
-    });
+    hold.addEventListener('keydown', function (e) { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); press(); } });
+    hold.addEventListener('keyup', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); release(); } });
   }
 
-  /* ---------- Missed check-in clock: three tiers, "I'm OK" stops it ---------- */
+  /* ---------- Demo 2 · Missed check-in, on the real Escalation Protocol screen ---------- */
   var clock = $('#clock');
   if (clock) {
-    var cTime = $('#clock-time'), bar = $('#clock-bar'), status = $('#clock-status');
+    var IMG_H = 1610;                                  // escalation.jpg height in px
+    var VIEW = 1343;                                    // visible screen height in the same px
+    var CARDS = { 1: [575, 850], 2: [862, 1125], 3: [1140, 1400], done: [1428, 1555] };
+    var SCROLL = { 1: 0, 2: 140, 3: IMG_H - VIEW, done: IMG_H - VIEW };
+    var LINES = {
+      1: 'Tier 1: her circle gets a silent ping with her live location.',
+      2: 'Tier 2: an audible prompt and a haptic pulse on her phone.',
+      3: 'Tier 3: SORA contacts emergency services.',
+      done: 'Disarmed. The cycle is complete.'
+    };
+    var scrollEl = $('#esc-scroll'), hl = $('#esc-hl'), cTime = $('#clock-time'), cStatus = $('#clock-status');
     var startBtn = $('#clock-start'), okBtn = $('#clock-ok');
-    var tiers = $$('.clock__tiers li', clock);
-    var SPEED = 10, END = 120;
-    var raf = null, t0 = 0, tier = 0;
+    var SPEED = 10, END = 120, raf = null, t0 = 0, tier = null;
     var fmt = function (s) { s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); };
-    var lines = {
-      1: 'Her circle gets her live location. Nobody nearby hears it.',
-      2: 'Her phone and Watch speak a prompt and vibrate.',
-      3: 'SORA contacts emergency services.'
+    var show = function (key) {
+      if (key === tier) return;
+      tier = key;
+      var c = CARDS[key];
+      hl.style.setProperty('--ht', (c[0] / IMG_H * 100).toFixed(2) + '%');
+      hl.style.setProperty('--hh', ((c[1] - c[0]) / IMG_H * 100).toFixed(2) + '%');
+      scrollEl.style.transform = 'translateY(' + (-SCROLL[key] / IMG_H * 100).toFixed(2) + '%)';
+      clock.setAttribute('data-tier', String(key));
+      cStatus.textContent = LINES[key];
     };
-    var setTier = function (n) {
-      if (n === tier) return;
-      tier = n;
-      clock.setAttribute('data-tier', String(n));
-      tiers.forEach(function (li) { li.classList.toggle('is-on', +li.dataset.tier <= n); });
-      status.textContent = lines[n];
-    };
-    var stop = function (msg) {
+    var stop = function () {
       cancelAnimationFrame(raf);
-      raf = null;
       okBtn.hidden = true;
-      startBtn.textContent = 'Run it again';
       startBtn.hidden = false;
-      if (msg) status.textContent = msg;
+      startBtn.textContent = 'Run it again';
     };
     var frame = function (now) {
       var sim = Math.min(END, ((now - t0) / 1000) * SPEED);
       cTime.textContent = fmt(sim);
-      bar.style.width = (sim / END * 100).toFixed(2) + '%';
-      setTier(sim < 60 ? 1 : sim < END ? 2 : 3);
+      show(sim < 60 ? 1 : sim < END ? 2 : 3);
       if (sim >= END) { stop(); return; }
       raf = requestAnimationFrame(frame);
     };
     startBtn.addEventListener('click', function () {
-      tier = 0;
-      tiers.forEach(function (li) { li.classList.remove('is-on'); });
+      tier = null;
+      clock.classList.add('is-active');
       cTime.textContent = '0:00';
-      bar.style.width = '0%';
       startBtn.hidden = true;
       okBtn.hidden = false;
       okBtn.focus();
@@ -177,9 +172,39 @@
       raf = requestAnimationFrame(frame);
     });
     okBtn.addEventListener('click', function () {
-      stop('Stopped at ' + cTime.textContent + '. Nothing more happens.');
+      stop();
+      show('done');
       startBtn.focus();
     });
+  }
+
+  /* ---------- Demo 3 · Fake call: setup, incoming call, on the call ---------- */
+  var callScreen = $('#call-screen');
+  if (callScreen) {
+    var callScroll = $('#call-scroll'), pressEl = $('#call-press'), callNote = $('#call-note');
+    var callStart = $('#call-start'), accept = $('#call-accept'), decline = $('#call-decline'), end = $('#call-end');
+    var NOTES = {
+      setup: 'A believable call gives her a reason to step away.',
+      ring: 'Dad is calling. Answer it, like any other call.',
+      talk: 'To anyone nearby, she’s just on a call.'
+    };
+    var step = function (s) {
+      callScreen.setAttribute('data-step', s);
+      callNote.textContent = NOTES[s];
+      accept.hidden = decline.hidden = s !== 'ring';
+      end.hidden = s !== 'talk';
+      callStart.disabled = s !== 'setup';
+      if (s === 'setup') callScroll.style.transform = '';
+    };
+    callStart.addEventListener('click', function () {
+      callStart.disabled = true;
+      callScroll.style.transform = 'translateY(' + (-(1624 - 1343) / 1624 * 100).toFixed(2) + '%)';
+      setTimeout(function () { pressEl.classList.add('is-on'); }, 550);
+      setTimeout(function () { pressEl.classList.remove('is-on'); step('ring'); accept.focus(); }, 900);
+    });
+    accept.addEventListener('click', function () { step('talk'); end.focus(); });
+    decline.addEventListener('click', function () { step('setup'); callStart.textContent = 'Try it again'; callStart.focus(); });
+    end.addEventListener('click', function () { step('setup'); callStart.textContent = 'Try it again'; callStart.focus(); });
   }
 
   /* ---------- Mode tabs (WAI-ARIA tabs, arrow keys) ---------- */

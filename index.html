@@ -41,16 +41,15 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow">Safety companion for iPhone and Apple Watch</p>
           <h1 id="hero-title">The friend who walks you&nbsp;home.</h1>
-          <p class="lede">SORA shares her walk with the circle she chose, and only while she walks. When she gets home, sharing ends and the route is deleted.</p>
+          <p class="lede">A safety companion for iPhone and Apple&nbsp;Watch. Sharing ends at her door.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#walk">Walk home with Mei</a>
-            <a class="btn btn--ghost" href="#modes">See the four modes</a>
+            <a class="link-arrow" href="#modes">See the four modes</a>
           </div>
           <ul class="awards-line" aria-label="Recognition">
-            <li><a href="https://www.red-dot.org/project/sora-92728" target="_blank" rel="noopener"><strong>Red Dot Award</strong> Winner 2026</a></li>
-            <li><strong>MUSE Design Awards</strong> Silver</li>
+            <li><a href="https://www.red-dot.org/project/sora-92728" target="_blank" rel="noopener"><strong>Red Dot</strong> Winner 2026</a></li>
+            <li><strong>MUSE</strong> Silver</li>
           </ul>
         </div>
         <div class="hero__devices">
@@ -255,41 +254,69 @@
       </div>
     </section>
 
-    <!-- 5 · Quiet help: try it -->
+    <!-- 5 · Quiet help: three demos on the real screens -->
     <section class="quiet" id="quiet" aria-labelledby="quiet-title">
-      <div class="wrap quiet__grid">
-        <div class="quiet__intro reveal">
+      <div class="wrap">
+        <header class="section-head reveal">
           <h2 id="quiet-title">Help that doesn’t draw attention.</h2>
-          <p class="section-sub">Showing distress can make things worse, so every way to get help is quiet.</p>
-          <div class="hold">
-            <button class="hold__btn" id="hold-btn" type="button" aria-describedby="hold-note">
-              <span class="hold__fill" aria-hidden="true"></span>
-              <span class="hold__label">Hold for help</span>
-            </button>
-            <p class="hold__note" id="hold-note" aria-live="polite">Press and hold</p>
-          </div>
-          <p class="quiet__also">Also quiet: <b>Digital Crown</b> double press · <b>Fake call</b></p>
-        </div>
+          <p class="section-sub">Showing distress can make things worse. Try the three quiet ways on the real screens.</p>
+        </header>
+        <div class="trio">
 
-        <div class="clock reveal" id="clock">
-          <p class="clock__lead">Missed check-in <span>· shown 10× faster</span></p>
-          <p class="clock__time" id="clock-time" aria-live="off">0:00</p>
-          <div class="clock__track" aria-hidden="true">
-            <span class="clock__bar" id="clock-bar"></span>
-            <span class="clock__mark" style="left:0%"></span>
-            <span class="clock__mark" style="left:50%"></span>
-            <span class="clock__mark" style="left:100%"></span>
-          </div>
-          <ol class="clock__tiers">
-            <li data-tier="1"><span>0:00</span><b>Silent alert</b></li>
-            <li data-tier="2"><span>1:00</span><b>Audio deterrent</b></li>
-            <li data-tier="3"><span>2:00</span><b>Emergency services</b></li>
-          </ol>
-          <p class="clock__status" id="clock-status" aria-live="polite">“I’m OK” stops it at any step.</p>
-          <div class="clock__actions">
-            <button class="btn btn--ghost" id="clock-start" type="button">Miss a check-in</button>
-            <button class="btn btn--ok" id="clock-ok" type="button" hidden>I’m OK</button>
-          </div>
+          <article class="demo demo--hold reveal">
+            <div class="phone">
+              <div class="screen">
+                <img src="assets/final/walking.jpg" width="616" height="1343" loading="lazy" alt="Walking screen: 8 minutes to home, with End walk and Hold for help buttons.">
+                <button class="hot hot--pill hot--invite" id="hold-btn" type="button" style="--hl:51.1%;--ht:88.2%;--hw:40.4%;--hh:6.1%" aria-describedby="hold-note">
+                  <span class="hot__fill" aria-hidden="true"></span><span class="sr-only">Hold for help</span>
+                </button>
+                <p class="toast" id="hold-toast" role="status"></p>
+              </div>
+            </div>
+            <h3>Hold for help</h3>
+            <p class="demo__note" id="hold-note">Press and hold it on the screen. A quick tap never counts.</p>
+            <p class="demo__also">On Apple Watch: double press the Digital Crown.</p>
+          </article>
+
+          <article class="demo demo--escalate reveal" id="clock">
+            <div class="phone phone--feature">
+              <div class="screen">
+                <div class="screen__scroll" id="esc-scroll">
+                  <img src="assets/final/escalation.jpg" width="616" height="1610" loading="lazy" alt="Escalation Protocol screen: Tier 1 silent notify when a check-in is missed, Tier 2 audio deterrent at 1:00, Tier 3 at 2:00, each with an I'm OK button, then Disarmed and resolved.">
+                  <span class="hl" id="esc-hl" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+            <h3>If she misses a check-in</h3>
+            <p class="demo__clock"><span id="clock-time">0:00</span><small>10× speed</small></p>
+            <div class="demo__actions">
+              <button class="btn btn--ghost" id="clock-start" type="button">Miss a check-in</button>
+              <button class="btn btn--ok" id="clock-ok" type="button" hidden>I’m OK</button>
+            </div>
+            <p class="sr-only" id="clock-status" aria-live="polite"></p>
+          </article>
+
+          <article class="demo demo--call reveal">
+            <div class="phone">
+              <div class="screen" id="call-screen" data-step="setup">
+                <div class="screen__scroll" id="call-scroll">
+                  <img src="assets/final/fake-setup.jpg" width="616" height="1624" loading="lazy" alt="Fake call setup: caller name, number, call delay and caller voice, with a Confirm setup button.">
+                  <span class="press" id="call-press" aria-hidden="true"></span>
+                </div>
+                <img class="call-shot" data-step="ring" src="assets/final/fake-incoming.jpg" width="616" height="1342" loading="lazy" alt="Incoming call from Dad with Decline and Accept buttons.">
+                <img class="call-shot" data-step="talk" src="assets/final/fake-call.jpg" width="616" height="1342" loading="lazy" alt="A video call with Dad in progress.">
+                <button class="hot hot--round hot--invite" id="call-accept" type="button" style="--hl:66.4%;--ht:71.4%;--hw:18.3%;--hh:8.35%" hidden><span class="sr-only">Accept the call</span></button>
+                <button class="hot hot--round" id="call-decline" type="button" style="--hl:14.9%;--ht:71.4%;--hw:18.3%;--hh:8.35%" hidden><span class="sr-only">Decline the call</span></button>
+                <button class="hot hot--round hot--invite" id="call-end" type="button" style="--hl:75.6%;--ht:76.9%;--hw:12%;--hh:5.5%" hidden><span class="sr-only">End the call</span></button>
+              </div>
+            </div>
+            <h3>Fake call</h3>
+            <p class="demo__note" id="call-note" aria-live="polite">A believable call gives her a reason to step away.</p>
+            <div class="demo__actions">
+              <button class="btn btn--ghost" id="call-start" type="button">Start a fake call</button>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
