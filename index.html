@@ -1,555 +1,362 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SORA — Meet Sora. A safety companion.</title>
-  <meta name="description" content="SORA is a women's safety companion. Four contextual modes on iPhone + Apple Watch. Submitted for Red Dot and iF Design Award 2026.">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SORA: the friend who walks you home</title>
+  <meta name="description" content="SORA is a safety companion for iPhone and Apple Watch. She shares her walk with the circle she chose, and sharing ends at her door. Red Dot Award 2026 winner.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SORA: the friend who walks you home">
+  <meta property="og:description" content="A safety companion for iPhone and Apple Watch. Sharing starts when she walks and ends at her door.">
+  <meta property="og:image" content="https://ziyi0619.github.io/sora/assets/final/home.jpg">
+  <meta name="theme-color" content="#F6F6FA">
+  <link rel="icon" href="assets/devices/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Page-wide breathing pastel orbs -->
-  <div class="page-orbs" aria-hidden="true">
-    <span class="page-orb page-orb--1"></span>
-    <span class="page-orb page-orb--2"></span>
-    <span class="page-orb page-orb--3"></span>
-    <span class="page-orb page-orb--4"></span>
-    <span class="page-orb page-orb--5"></span>
-  </div>
-
-  <!-- ============ FLOATING PILL NAV ============ -->
-  <nav class="pill-nav">
-    <a href="#top" class="pill-nav__brand"><img src="assets/devices/logo.png" alt="Sora"></a>
-    <ul class="pill-nav__links">
-      <li><a href="#why" class="pill-nav__link">Why</a></li>
-      <li><a href="#modes" class="pill-nav__link">Modes</a></li>
-      <li><a href="#features" class="pill-nav__link">Features</a></li>
-      <li><a href="#network" class="pill-nav__link">Network</a></li>
-      <li><a href="#wearable" class="pill-nav__link">Wearable</a></li>
-    </ul>
-  </nav>
-
-  <!-- ============ HERO ============ -->
-  <header class="hero" id="top">
-    <div class="hero__inner">
-      <h1 class="hero__headline" data-split="words">
-        <span class="hero__line">Meet Sora.</span>
-        <span class="hero__line"><em>A safety companion.</em></span>
-      </h1>
-
-      <p class="hero__sub">
-        Named after <em>soror</em> — Latin for sister. Sora protects you during specific moments.
-      </p>
-
-      <div class="hero__ctas">
-        <a href="#modes" class="btn btn--dark">
-          <span>See the modes</span>
-          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#why" class="btn btn--ghost"><span>Why Sora</span></a>
-      </div>
-
-      <div class="hero__phones">
-        <figure class="device hero-phone hero-phone--left">
-          <img src="assets/devices/p_recents.png" alt="Recent journeys list">
-        </figure>
-        <figure class="device hero-phone hero-phone--center">
-          <img src="assets/devices/p_home.png" alt="SORA home with location and Walk me home action">
-        </figure>
-        <figure class="device hero-phone hero-phone--right">
-          <img src="assets/devices/p_modes.png" alt="Mode selector">
-        </figure>
-      </div>
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="SORA home">
+        <img src="assets/devices/logo.png" alt="SORA" width="78" height="42">
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#walk">The walk</a>
+        <a href="#modes">Modes</a>
+        <a href="#quiet">Quiet help</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#team">Team</a>
+      </nav>
     </div>
   </header>
 
-  <!-- ============ WHY (problem statement) ============ -->
-  <section class="section section--why" id="why">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Why Sora exists</span></span>
-      <h2 class="display display--lg" data-split="words">
-        1 in 3 women does not feel safe <em>in her own community.</em>
-      </h2>
-      <p class="lede center">
-        Sora offers companion modes for the moments that actually need them — the walk home, the first date, the late commute, the trip abroad.
-      </p>
-    </div>
+  <main id="main">
 
-    <!-- Marquee ticker (values) -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker__track">
-        <span>Wisdom</span><span class="ticker__star">✶</span>
-        <span>Strength</span><span class="ticker__star">✶</span>
-        <span>Community</span><span class="ticker__star">✶</span>
-        <span>Held, not watched</span><span class="ticker__star">✶</span>
-        <span>Aura, not alert</span><span class="ticker__star">✶</span>
-        <span>Sisterhood, not surveillance</span><span class="ticker__star">✶</span>
-        <span>Wisdom</span><span class="ticker__star">✶</span>
-        <span>Strength</span><span class="ticker__star">✶</span>
-        <span>Community</span><span class="ticker__star">✶</span>
-        <span>Held, not watched</span><span class="ticker__star">✶</span>
-        <span>Aura, not alert</span><span class="ticker__star">✶</span>
-        <span>Sisterhood, not surveillance</span><span class="ticker__star">✶</span>
+    <!-- 1 · Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Safety companion for iPhone and Apple Watch</p>
+          <h1 id="hero-title">The friend who walks you&nbsp;home.</h1>
+          <p class="lede">SORA shares her walk with the circle she chose, and only while she walks. When she gets home, sharing ends and the route is deleted.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#walk">Follow one walk</a>
+            <a class="btn btn--ghost" href="#modes">See the four modes</a>
+          </div>
+          <ul class="awards-line" aria-label="Recognition">
+            <li><strong>Red Dot Award</strong> Winner 2026</li>
+            <li><strong>MUSE Design Awards</strong> Silver</li>
+            <li><strong>iF Design Award</strong> 2027 entry</li>
+          </ul>
+        </div>
+        <div class="hero__devices">
+          <figure class="phone phone--lg">
+            <img src="assets/final/home.jpg" width="620" height="1347" alt="SORA home screen: a map with the note 'Only you can see you, sharing starts when you walk', a Walk me home button showing 13 minutes, and Mom and Lia listed as walking with her.">
+          </figure>
+          <figure class="watch hero__watch">
+            <img src="assets/final/watch-nightwalk.jpg" width="305" height="373" alt="Apple Watch showing Nightwalk with the next check-in in 4 minutes 32 seconds.">
+          </figure>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ MODES (click carousel with dots + arrows) ============ -->
-  <section class="section section--modes" id="modes">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Four contextual modes</span></span>
-      <h2 class="display display--lg" data-split="words">Protection that adapts <em>to the moment.</em></h2>
-      <p class="lede center">Each mode arms a different toolkit on phone and wrist. Click through to see how Sora shapes itself around her night.</p>
-    </div>
+    <!-- 2 · Insight -->
+    <section class="insight" aria-labelledby="insight-title">
+      <div class="wrap insight__grid">
+        <div class="stat reveal">
+          <p class="stat__num">67<span>%</span></p>
+          <p class="stat__label" id="insight-title">Only 67% of women feel safe walking alone at night where they live.</p>
+          <p class="source">Gallup Global Safety Report 2025</p>
+        </div>
+        <div class="insight__prose reveal">
+          <p class="pull">“Text me when you’re home.”</p>
+          <p>Women already look after each other: a text, a shared location, a friend on the phone until the door. Those habits work, but each one is manual, easy to notice, or left on long after the walk.</p>
+          <p>SORA keeps the habit and takes the work out of it. She picks a mode and taps once. Her circle comes along, and nobody is tracked once she’s home.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="container">
-      <div class="carousel">
-        <div class="carousel__viewport">
-          <div class="carousel__track">
-            <article class="slide slide--sky">
-              <div class="slide__media">
-                <figure class="device device--showcase"><img src="assets/devices/p_nightwalk.png" alt="Nightwalk active route"></figure>
-                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_nightwalk.png" alt="Apple Watch · Nightwalk"></figure>
-              </div>
-              <div class="slide__copy">
-                <span class="slide__num">01 · Mode</span>
-                <h3>Nightwalk</h3>
-                <p>Arms every tool before she steps outside after dark. Safe word, fake call, timed check-in — ready before she reaches the door.</p>
-                <ul class="check-list">
-                  <li><span class="check"></span>Route mapped to a guardian's eye</li>
-                  <li><span class="check"></span>Voice-triggered safe word</li>
-                  <li><span class="check"></span>Auto check-in on arrival</li>
-                </ul>
-              </div>
-            </article>
+    <!-- 3 · One walk (timeline) -->
+    <section class="walk" id="walk" aria-labelledby="walk-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">One walk, start to finish</p>
+          <h2 id="walk-title">Mei leaves a gig at 72nd Street. Home is 13 minutes away.</h2>
+        </header>
+        <ol class="timeline">
+          <li class="timeline__step reveal">
+            <figure class="phone">
+              <img src="assets/final/home.jpg" width="620" height="1347" loading="lazy" alt="Home screen with the Walk me home button, 13 minutes.">
+            </figure>
+            <div class="timeline__text">
+              <p class="time">10:29 PM</p>
+              <h3>Walk me home</h3>
+              <p>One tap. Her route and her circle are already filled in. Until she starts, only she can see herself on the map.</p>
+            </div>
+          </li>
+          <li class="timeline__step reveal">
+            <figure class="phone">
+              <img src="assets/final/walking.jpg" width="620" height="1347" loading="lazy" alt="Walking screen: turn-by-turn directions, 8 minutes to home, a message from Mom, and End walk and Hold for help buttons.">
+            </figure>
+            <div class="timeline__text">
+              <p class="time">10:34 PM</p>
+              <h3>Walking together</h3>
+              <p>Mom and Lia can see her until she’s home. Directions, check-ins, messages and Hold for help sit in one panel.</p>
+            </div>
+          </li>
+          <li class="timeline__step reveal">
+            <figure class="phone">
+              <img src="assets/final/home-safe.jpg" width="620" height="1347" loading="lazy" alt="Home safe screen at 10:42 PM, 13 minutes with Mom and Lia, noting that Mom and Lia can't see her now and the route is deleted.">
+            </figure>
+            <div class="timeline__text">
+              <p class="time">10:42 PM</p>
+              <h3>Home safe</h3>
+              <p>Sharing ends by itself and the route is deleted. Mom sends love back.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-            <article class="slide slide--blush">
-              <div class="slide__media">
-                <figure class="device device--showcase"><img src="assets/devices/p_date.png" alt="Date mode"></figure>
-                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_date.png" alt="Apple Watch · First Date"></figure>
-              </div>
-              <div class="slide__copy">
-                <span class="slide__num">02 · Mode</span>
-                <h3>Dating &amp; Nights Out</h3>
-                <p>Shares her venue with one trusted guardian. A discreet wearable squeeze is the only signal she needs to leave.</p>
-                <ul class="check-list">
-                  <li><span class="check"></span>Venue shared with one chosen guardian</li>
-                  <li><span class="check"></span>Fake-call exit, summoned from the wrist</li>
-                  <li><span class="check"></span>"On my way home" auto-disarms when she's safe</li>
-                </ul>
-              </div>
-            </article>
+    <!-- 4 · Modes (tabs) -->
+    <section class="modes" id="modes" aria-labelledby="modes-title" data-mode="nightwalk">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Four modes</p>
+          <h2 id="modes-title">Same friend, different nights.</h2>
+          <p class="section-sub">Every mode keeps the same layout. Only the tint and the tools change.</p>
+        </header>
 
-            <article class="slide slide--mint">
-              <div class="slide__media">
-                <figure class="device device--showcase"><img src="assets/devices/p_commute.png" alt="Commute route"></figure>
-                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_commute.png" alt="Apple Watch · Commute"></figure>
-              </div>
-              <div class="slide__copy">
-                <span class="slide__num">03 · Mode</span>
-                <h3>Commute</h3>
-                <p>Learns her usual route. Notices when she doesn't take it. Alerts her circle silently, before she has to ask.</p>
-                <ul class="check-list">
-                  <li><span class="check"></span>Pattern learning, not constant tracking</li>
-                  <li><span class="check"></span>Silent deviation alerts to her circle</li>
-                  <li><span class="check"></span>Soft check-ins, never alarms</li>
-                </ul>
-              </div>
-            </article>
+        <div class="tabs" role="tablist" aria-label="Modes">
+          <button class="tab" role="tab" id="tab-nightwalk" aria-controls="panel-nightwalk" aria-selected="true" data-mode="nightwalk">Nightwalk</button>
+          <button class="tab" role="tab" id="tab-dating" aria-controls="panel-dating" aria-selected="false" tabindex="-1" data-mode="dating">Dating &amp; Nights Out</button>
+          <button class="tab" role="tab" id="tab-commute" aria-controls="panel-commute" aria-selected="false" tabindex="-1" data-mode="commute">Commute</button>
+          <button class="tab" role="tab" id="tab-traveling" aria-controls="panel-traveling" aria-selected="false" tabindex="-1" data-mode="traveling">Traveling</button>
+        </div>
 
-            <article class="slide slide--lavender">
-              <div class="slide__media">
-                <figure class="device device--showcase"><img src="assets/devices/p_travel_safespots.png" alt="Travel safe spots in Tokyo"></figure>
-                <figure class="device device--watch device--watch-float"><img src="assets/devices/w_travel.png" alt="Apple Watch · Traveling"></figure>
-              </div>
-              <div class="slide__copy">
-                <span class="slide__num">04 · Mode</span>
-                <h3>Traveling</h3>
-                <p>Bridges to local emergency services in any country. Curated safe spots near her location. Full offline functionality.</p>
-                <ul class="check-list">
-                  <li><span class="check"></span>Country-aware emergency dispatch</li>
-                  <li><span class="check"></span>Verified safe spots within walking distance</li>
-                  <li><span class="check"></span>Offline mode, no signal needed</li>
-                </ul>
-              </div>
-            </article>
+        <div class="mode-panel" role="tabpanel" id="panel-nightwalk" aria-labelledby="tab-nightwalk">
+          <div class="mode-panel__devices">
+            <figure class="phone"><img src="assets/final/start-walk.jpg" width="620" height="1347" loading="lazy" alt="Nightwalk route picker: 13 minutes via Amsterdam with 9 places open, or 12 minutes via Columbus, and who walks with her."></figure>
+            <figure class="watch"><img src="assets/final/watch-nightwalk.jpg" width="305" height="373" loading="lazy" alt="Apple Watch, Nightwalk: next check-in 4:32."></figure>
+          </div>
+          <div class="mode-panel__text">
+            <p class="mode-panel__num">01</p>
+            <h3>Nightwalk</h3>
+            <p>She picks the route and who walks with her. The busier way is suggested when more places along it are still open, and check-ins live on her wrist.</p>
           </div>
         </div>
 
-        <div class="carousel__controls">
-          <button class="carousel__arrow" data-dir="-1" aria-label="Previous mode">
-            <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4L6 8l4 4"/></svg>
-          </button>
-          <ol class="carousel__dots">
-            <li><button class="carousel__dot is-active" data-jump="0" aria-label="Nightwalk"></button></li>
-            <li><button class="carousel__dot" data-jump="1" aria-label="Dating"></button></li>
-            <li><button class="carousel__dot" data-jump="2" aria-label="Commute"></button></li>
-            <li><button class="carousel__dot" data-jump="3" aria-label="Traveling"></button></li>
+        <div class="mode-panel" role="tabpanel" id="panel-dating" aria-labelledby="tab-dating" hidden>
+          <div class="mode-panel__devices">
+            <figure class="phone"><img src="assets/final/night-out.jpg" width="620" height="1347" loading="lazy" alt="Dating and Nights Out: 'Lia knows who you're with', a check-in at 11:30, Call me away and Ride home options."></figure>
+            <figure class="watch"><img src="assets/final/watch-dating.jpg" width="305" height="373" loading="lazy" alt="Apple Watch, Dating and Nights Out: real-time location sharing."></figure>
+          </div>
+          <div class="mode-panel__text">
+            <p class="mode-panel__num">02</p>
+            <h3>Dating &amp; Nights Out</h3>
+            <p>Lia knows who she’s with. “Call me away” and a ride home Lia can see are one tap away.</p>
+          </div>
+        </div>
+
+        <div class="mode-panel" role="tabpanel" id="panel-commute" aria-labelledby="tab-commute" hidden>
+          <div class="mode-panel__devices">
+            <figure class="phone"><img src="assets/final/commute.jpg" width="620" height="1347" loading="lazy" alt="Commute in quiet mode: home by 6:42, on track, with the train leg from Penn Station to 79th Street."></figure>
+            <figure class="watch"><img src="assets/final/watch-commute.jpg" width="305" height="373" loading="lazy" alt="Apple Watch, Commute: route sharing."></figure>
+          </div>
+          <div class="mode-panel__text">
+            <p class="mode-panel__num">03</p>
+            <h3>Commute</h3>
+            <p>Quiet by default. Mom hears only if she leaves her usual way.</p>
+          </div>
+        </div>
+
+        <div class="mode-panel" role="tabpanel" id="panel-traveling" aria-labelledby="tab-traveling" hidden>
+          <div class="mode-panel__devices">
+            <figure class="phone"><img src="assets/final/traveling.jpg" width="620" height="1347" loading="lazy" alt="Traveling in Tokyo: 6 minutes to the hotel, police 110 and ambulance 119, and a help phrase in Japanese."></figure>
+            <figure class="watch"><img src="assets/final/watch-traveling.jpg" width="305" height="373" loading="lazy" alt="Apple Watch, Traveling: offline ready."></figure>
+          </div>
+          <div class="mode-panel__text">
+            <p class="mode-panel__num">04</p>
+            <h3>Traveling</h3>
+            <p>Local emergency numbers, a help phrase in Japanese, and a map that works offline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Quiet help (split + vertical tiers) -->
+    <section class="quiet" id="quiet" aria-labelledby="quiet-title">
+      <div class="wrap quiet__grid">
+        <div class="quiet__intro reveal">
+          <p class="eyebrow">Quiet by design</p>
+          <h2 id="quiet-title">Help that doesn’t draw attention.</h2>
+          <p class="section-sub">In a tense moment, showing distress can make things worse. Every way to get help is quiet.</p>
+          <dl class="actions">
+            <div><dt>Hold for help</dt><dd>A long press, so a stray tap never sets it off.</dd></div>
+            <div><dt>Digital Crown</dt><dd>A double press on Apple Watch, without taking out her phone.</dd></div>
+            <div><dt>Fake call</dt><dd>A believable incoming call gives her a reason to step away.</dd></div>
+          </dl>
+        </div>
+        <div class="tiers reveal">
+          <p class="tiers__lead">If she misses a check-in, help builds in three steps.</p>
+          <ol>
+            <li class="tier tier--1">
+              <span class="tier__time">0:00</span>
+              <div><h3>Silent alert</h3><p>Her circle gets her live location. Nobody near her hears a thing.</p></div>
+            </li>
+            <li class="tier tier--2">
+              <span class="tier__time">1:00</span>
+              <div><h3>Audio deterrent</h3><p>Her phone and Watch speak a prompt and vibrate, so anyone nearby knows she isn’t alone.</p></div>
+            </li>
+            <li class="tier tier--3">
+              <span class="tier__time">2:00</span>
+              <div><h3>Emergency services</h3><p>If she still hasn’t answered, SORA contacts emergency services.</p></div>
+            </li>
           </ol>
-          <button class="carousel__arrow" data-dir="1" aria-label="Next mode">
-            <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l4 4-4 4"/></svg>
-          </button>
+          <p class="tiers__ok"><span class="dot dot--ok" aria-hidden="true"></span>“I’m OK” stops it at any step.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ FEATURES (soft pastel grid) ============ -->
-  <section class="section section--features" id="features">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Invisible protection</span></span>
-      <h2 class="display display--lg" data-split="words">No alarm. <em>No revealed distress.</em></h2>
-      <p class="lede center">Tools designed to look like nothing at all — to a stranger, to a date, to anyone watching.</p>
-    </div>
-
-    <div class="container">
-      <div class="feat-grid">
-        <article class="feat-card feat-card--coral">
-          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_fakecall_setup.png" alt="Fake call setup"></figure></div>
-          <h4>Fake Call</h4>
-          <p>One squeeze of the wearable surfaces a realistic incoming call.</p>
-        </article>
-        <article class="feat-card feat-card--lavender">
-          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_safeword_timer.png" alt="Safe word + timed check-in"></figure></div>
-          <h4>Safe Word + Timed Check-in</h4>
-          <p>A phrase recognized on-device. A countdown that quietly notifies her circle.</p>
-        </article>
-        <article class="feat-card feat-card--mint">
-          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_safety_tools.png" alt="Safety tools tray"></figure></div>
-          <h4>Safety Tools Tray</h4>
-          <p>Fake call, safe word, ghost call, route memory — one tap from any screen.</p>
-        </article>
-        <article class="feat-card feat-card--wide feat-card--blush">
-          <div class="feat-card__media feat-card__media--wide"><figure class="device device--feat"><img src="assets/devices/p_sos_tiers.png" alt="Emergency response with three tiers"></figure></div>
-          <div class="feat-card__copy">
-            <h4>Three-tier escalation</h4>
-            <p>Silent notify · Audio deterrent · Emergency dispatch. The response always matches the threat. Her circle is told before 911 is.</p>
-          </div>
-        </article>
-        <article class="feat-card feat-card--blue">
-          <div class="feat-card__media"><figure class="device device--feat"><img src="assets/devices/p_arrived.png" alt="Cheers, you arrived safely"></figure></div>
-          <h4>Arrival Confirm</h4>
-          <p>"Cheers, you arrived safely!" Her contacts know before she puts the phone down.</p>
-        </article>
+    <!-- 6 · Privacy lifecycle (horizontal band) -->
+    <section class="privacy" id="privacy" aria-labelledby="privacy-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Shared only while she walks</p>
+          <h2 id="privacy-title">Shared while she walks. Deleted when she’s home.</h2>
+          <p class="section-sub">Location sharing is useful for a walk and risky as a habit. In SORA it exists for the walk itself, and only for the circle she chose.</p>
+        </header>
+        <ol class="lifecycle reveal">
+          <li><span class="lifecycle__mark"></span><h3>She starts a walk</h3><p>Sharing turns on with one tap, for her circle only.</p></li>
+          <li><span class="lifecycle__mark"></span><h3>While she walks</h3><p>Her circle sees her route and her check-ins.</p></li>
+          <li><span class="lifecycle__mark lifecycle__mark--home"></span><h3>She gets home</h3><p>Sharing ends by itself. Nobody has to remember to stop it.</p></li>
+          <li><span class="lifecycle__mark lifecycle__mark--off"></span><h3>After that</h3><p>The route is deleted. Nothing keeps tracking her.</p></li>
+        </ol>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ HOW IT WORKS (3 numbered colored cards) ============ -->
-  <section class="section section--how" id="how">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>How it works</span></span>
-      <h2 class="display display--lg" data-split="words">She speaks, taps, <em>or stays silent.</em></h2>
-      <p class="lede center">A voice trigger. A wrist tap. A network that already knows.</p>
-    </div>
-
-    <div class="container">
-      <div class="how__grid">
-        <article class="how-card how-card--blue">
-          <span class="how-card__num">01</span>
-          <div class="how-card__watermark"><span>Speak</span><span>Speak</span><span>Speak</span></div>
-          <div class="how-card__icon">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>
-          </div>
-          <h3 class="how-card__title">Speak the safe word</h3>
-          <p class="how-card__desc">A phrase she chose, recognized on-device. Spoken in any sentence, it triggers the protocol.</p>
-        </article>
-
-        <article class="how-card how-card--coral">
-          <span class="how-card__num">02</span>
-          <div class="how-card__watermark"><span>Squeeze</span><span>Squeeze</span><span>Squeeze</span></div>
-          <div class="how-card__icon">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
-          </div>
-          <h3 class="how-card__title">Tap the watch</h3>
-          <p class="how-card__desc">Green for "I'm safe." Red to escalate to her circle. A long press calls 911 with location.</p>
-        </article>
-
-        <article class="how-card how-card--lavender">
-          <span class="how-card__num">03</span>
-          <div class="how-card__watermark"><span>Held</span><span>Held</span><span>Held</span></div>
-          <div class="how-card__icon">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h3 class="how-card__title">Held by a network</h3>
-          <p class="how-card__desc">Her circle gets a soft notification — knows what's happening before 911 is told.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ NETWORK (dark) ============ -->
-  <section class="section section--network color-flip" id="network">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow pill-eyebrow--dark"><span class="pill-eyebrow__dot"></span><span>The network</span></span>
-      <h2 class="display display--lg display--light" data-split="words">Not surveillance. <em>Sisterhood.</em></h2>
-      <p class="lede lede--light center">When women know they're held by a network, the brain finally stops scanning.</p>
-    </div>
-
-    <div class="container">
-      <div class="net-grid">
-        <article class="net-card">
-          <div class="net-card__media"><figure class="device device--feat"><img src="assets/devices/p_circle.png" alt="Safety Circle"></figure></div>
-          <h4>Safety Circle</h4>
-          <p>Verified loved ones with real-time status — HOME, IN TRANSIT, AT WORK. Visible to her, never to strangers.</p>
-        </article>
-        <article class="net-card">
-          <div class="net-card__media"><figure class="device device--feat"><img src="assets/devices/p_community_feed.png" alt="Community feed"></figure></div>
-          <h4>Whisper Feed</h4>
-          <p>Neighborhood incidents posted by verified members. Useful, calm, never sensational.</p>
-        </article>
-        <article class="net-card">
-          <div class="net-card__media"><figure class="device device--feat"><img src="assets/devices/p_profile.png" alt="Profile"></figure></div>
-          <h4>Standing earned</h4>
-          <p>Guided journeys. Secured miles. Hours actively held. Standing earned through care, not engagement.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STEALTH ============ -->
-  <section class="section section--stealth color-flip">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow pill-eyebrow--dark"><span class="pill-eyebrow__dot"></span><span>Stealth mode</span></span>
-      <h2 class="display display--lg display--light" data-split="words">A quieter face <em>for the same protection.</em></h2>
-      <p class="lede lede--light center">Same flows, dark interface. Reads like a notes app at a glance.</p>
-    </div>
-
-    <div class="stealth-marquee">
-      <div class="stealth-marquee__track">
-        <figure class="device device--mid"><img src="assets/devices/p_stealth_home.png" alt="Stealth home"></figure>
-        <figure class="device device--mid"><img src="assets/devices/p_stealth_date.png" alt="Stealth date"></figure>
-        <figure class="device device--mid"><img src="assets/devices/p_stealth_network.png" alt="Stealth network"></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_home.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_date.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_network.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_home.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_date.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_network.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_home.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_date.png" alt=""></figure>
-        <figure class="device device--mid" aria-hidden="true"><img src="assets/devices/p_stealth_network.png" alt=""></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WEARABLE ============ -->
-  <section class="section section--wearable" id="wearable">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>The wearable</span></span>
-      <h2 class="display display--lg" data-split="words">Help, <em>at the speed of a wrist tap.</em></h2>
-      <p class="lede center">The watch surfaces only what matters in the moment — active mode, who's watching out, and a single tap to escalate.</p>
-    </div>
-
-    <div class="container">
-      <div class="watch-row">
-        <figure class="device device--watch-card"><img src="assets/devices/w_nightwalk.png" alt="Nightwalk"><figcaption>Nightwalk · check-in 4:32</figcaption></figure>
-        <figure class="device device--watch-card"><img src="assets/devices/w_date.png" alt="First Date"><figcaption>First Date · sharing with one</figcaption></figure>
-        <figure class="device device--watch-card"><img src="assets/devices/w_commute.png" alt="Commute"><figcaption>Commute · route shared</figcaption></figure>
-        <figure class="device device--watch-card"><img src="assets/devices/w_travel.png" alt="Traveling"><figcaption>Traveling · no danger nearby</figcaption></figure>
-      </div>
-
-      <dl class="interactions">
-        <div><dt>Tap (green)</dt><dd>I'm safe</dd></div>
-        <div><dt>Tap (red)</dt><dd>Escalate to her circle, silently</dd></div>
-        <div><dt>Long press</dt><dd>Emergency SOS — calls 911 with location</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT + TEAM ============ -->
-  <section class="section section--about" id="about">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>About &amp; team</span></span>
-      <h2 class="display display--lg" data-split="words">Built by women, <em>for women.</em></h2>
-      <p class="lede center">Four designers, one shared brief — to build safety that feels held, not watched.</p>
-    </div>
-
-    <div class="container">
-      <div class="team">
-        <div class="team__grid">
-          <figure class="team-card">
-            <div class="team-card__photo"><img src="team/yichun.jpg" alt="Yichun Liu"></div>
-            <figcaption>
-              <div class="team-card__text">
-                <strong>Yichun Liu</strong>
-                <span class="team-card__role">Design Lead</span>
-              </div>
-              <a href="https://www.linkedin.com/in/yichundesign/" class="team-card__linkedin" aria-label="Yichun Liu on LinkedIn" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-              </a>
-            </figcaption>
-          </figure>
-          <figure class="team-card">
-            <div class="team-card__photo"><img src="team/ziyi.png" alt="Ziyi Yan"></div>
-            <figcaption>
-              <div class="team-card__text">
-                <strong>Ziyi Yan</strong>
-                <span class="team-card__role">UX &amp; Product Strategy</span>
-              </div>
-              <a href="https://www.linkedin.com/in/ziyiii" class="team-card__linkedin" aria-label="Ziyi Yan on LinkedIn" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-              </a>
-            </figcaption>
-          </figure>
-          <figure class="team-card">
-            <div class="team-card__photo"><img src="team/qingwen.jpg" alt="Qingwen Zheng"></div>
-            <figcaption>
-              <div class="team-card__text">
-                <strong>Qingwen Zheng</strong>
-                <span class="team-card__role">UX Designer &amp; Researcher</span>
-              </div>
-              <a href="https://www.linkedin.com/in/alicezhenghz/" class="team-card__linkedin" aria-label="Qingwen Zheng on LinkedIn" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-              </a>
-            </figcaption>
-          </figure>
-          <figure class="team-card">
-            <div class="team-card__photo"><img src="team/fan.jpg" alt="Fan Yang"></div>
-            <figcaption>
-              <div class="team-card__text">
-                <strong>Fan Yang</strong>
-                <span class="team-card__role">Visual Designer</span>
-              </div>
-              <a href="https://www.linkedin.com/in/fan-y-140516262/" class="team-card__linkedin" aria-label="Fan Yang on LinkedIn" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-              </a>
-            </figcaption>
-          </figure>
+    <!-- 7 · After dark (full-bleed Midnight) -->
+    <section class="dark" aria-labelledby="dark-title">
+      <div class="wrap dark__grid">
+        <div class="dark__copy reveal">
+          <p class="eyebrow eyebrow--dark">After dark</p>
+          <h2 id="dark-title">The same friend, after dark.</h2>
+          <p>A deep Midnight blue instead of alarm black. The layout, tints and actions stay where she expects them, so opening SORA never raises her pulse.</p>
+        </div>
+        <div class="dark__devices reveal">
+          <figure class="phone"><img src="assets/final/dark-home.jpg" width="620" height="1347" loading="lazy" alt="Home screen in the dark theme with the Walk me home button."></figure>
+          <figure class="phone phone--offset"><img src="assets/final/dark-walking.jpg" width="620" height="1347" loading="lazy" alt="Walking screen in the dark theme, 8 minutes to home."></figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ DESIGN LANGUAGE ============ -->
-  <section class="section section--design">
-    <div class="container container--narrow center">
-      <span class="pill-eyebrow"><span class="pill-eyebrow__dot"></span><span>Design language</span></span>
-      <h2 class="display display--lg" data-split="words">One gradient, <em>four atmospheres.</em></h2>
-      <p class="lede center">Sora's color system is built from a single dusk-to-dawn wash, the same gradient that opens the app. Each mode pulls one hue from it and bathes the screen in that color, so the phone <em>feels</em> like the moment you're in.</p>
-    </div>
-
-    <div class="container">
-      <div class="dl-modes">
-        <article class="dl-mode dl-mode--night">
-          <div class="dl-mode__swatch" style="background:linear-gradient(135deg,#6688FF 0%,#ADDCFF 60%,#CAFDFF 100%)"></div>
-          <div class="dl-mode__body">
-            <div class="dl-mode__head">
-              <h3>Nightwalk · Streetlight Blue</h3>
-              <span class="dl-mode__hex">#6688FF → #CAFDFF</span>
-            </div>
-            <p>Cobalt of dusk softening into the wash of a streetlight on wet pavement. Cool and alert, the gradient feels like the sky letting you go home.</p>
+    <!-- 8 · Design language (comparison columns) -->
+    <section class="language" aria-labelledby="language-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Design language</p>
+          <h2 id="language-title">One layout. Four tints. Three colors that never change.</h2>
+        </header>
+        <div class="language__grid reveal">
+          <div class="language__col">
+            <h3>Mode tints</h3>
+            <ul class="swatches">
+              <li><span class="sw" style="--c:#DCD1F3"></span><b>Nightwalk</b><code>#DCD1F3</code></li>
+              <li><span class="sw" style="--c:#FAEEF0"></span><b>Dating &amp; Nights Out</b><code>#FAEEF0</code></li>
+              <li><span class="sw" style="--c:#E2F3F0"></span><b>Commute</b><code>#E2F3F0</code></li>
+              <li><span class="sw" style="--c:#F0EAF7"></span><b>Traveling</b><code>#F0EAF7</code></li>
+            </ul>
           </div>
-        </article>
-
-        <article class="dl-mode dl-mode--date">
-          <div class="dl-mode__swatch" style="background:linear-gradient(135deg,#FFA6CA 0%,#FFCED7 50%,#FEF5E3 100%)"></div>
-          <div class="dl-mode__body">
-            <div class="dl-mode__head">
-              <h3>Dating · Rose to Cream</h3>
-              <span class="dl-mode__hex">#FFA6CA → #FEF5E3</span>
-            </div>
-            <p>The flush of a rose dissolving into candlelight. Skin-warm and intimate, with a hot edge that sits one shade from the escalate-coral so warmth and vigilance share a family.</p>
+          <div class="language__col">
+            <h3>Actions</h3>
+            <ul class="chips">
+              <li><span class="chip chip--start">Walk me home</span><small>Start · #5C74C4</small></li>
+              <li><span class="chip chip--help">Hold for help</span><small>Help · #BC4C54</small></li>
+              <li><span class="chip chip--ok">I’m OK</span><small>Stop · #04846C</small></li>
+            </ul>
           </div>
-        </article>
-
-        <article class="dl-mode dl-mode--commute">
-          <div class="dl-mode__swatch" style="background:linear-gradient(135deg,#6CD2F0 0%,#97E8F3 50%,#C3FFF6 100%)"></div>
-          <div class="dl-mode__body">
-            <div class="dl-mode__head">
-              <h3>Commute · Morning Sky</h3>
-              <span class="dl-mode__hex">#6CD2F0 → #C3FFF6</span>
-            </div>
-            <p>Turquoise of an open sky giving way to the first mint of fresh air. The most ordinary mode gets the most reassuring color: a route you've taken a thousand times that's still worth protecting.</p>
-          </div>
-        </article>
-
-        <article class="dl-mode dl-mode--travel">
-          <div class="dl-mode__swatch" style="background:linear-gradient(135deg,#95A7FA 0%,#C1BCFA 50%,#EDD1FA 100%)"></div>
-          <div class="dl-mode__body">
-            <div class="dl-mode__head">
-              <h3>Traveling · Periwinkle to Lilac</h3>
-              <span class="dl-mode__hex">#95A7FA → #EDD1FA</span>
-            </div>
-            <p>The in-between hour of a long flight. Periwinkle of unfamiliar dusk drifting into lilac dawn, atmospheric and dreamlike. Held, even when nothing around you is.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="dl-system">
-        <div class="dl-system__head">
-          <h4>The action layer</h4>
-          <p>Three colors that mean the same thing in every mode — so users learn the buttons once and never re-learn them.</p>
-        </div>
-        <div class="dl-system__row">
-          <div class="dl-action">
-            <span class="dl-action__chip" style="background:#4A5DBE"></span>
-            <div>
-              <strong>Indigo · Act</strong>
-              <span>Sora primary · #4A5DBE</span>
-              <p>The brand color. Walk me home. Start timer. Every primary button.</p>
-            </div>
-          </div>
-          <div class="dl-action">
-            <span class="dl-action__chip" style="background:#E97B6B"></span>
-            <div>
-              <strong>Coral · Escalate</strong>
-              <span>Alert accent · #E97B6B</span>
-              <p>Tier-3 emergency, watch alert bell, "Escalate" secondary CTA. Saved for one job.</p>
-            </div>
-          </div>
-          <div class="dl-action">
-            <span class="dl-action__chip" style="background:#3DA67A"></span>
-            <div>
-              <strong>Mint · Confirm</strong>
-              <span>Safety green · #3DA67A</span>
-              <p>"I'm safe" on the watch, Tier-1 silent notify, arrival check-in.</p>
-            </div>
+          <div class="language__col language__col--type">
+            <h3>Type</h3>
+            <p class="type-sample type-sample--head">Aa</p>
+            <p><b>Manrope</b> for headings</p>
+            <p class="type-sample type-sample--body">Aa</p>
+            <p><b>DM Sans</b> for text</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="dl-stealth">
-        <div class="dl-stealth__copy">
-          <h4>Stealth · The dark variant</h4>
-          <p>When the screen can't be seen, the mode tint disappears entirely — only the action colors survive on near-black <code>#0F1115</code>. Indigo lifts to <code>#8A9BE8</code> for AA contrast. Same flows, quieter face.</p>
-        </div>
-        <div class="dl-stealth__bar">
-          <span style="background:#0F1115"></span>
-          <span style="background:#1C1F26"></span>
-          <span style="background:#8A9BE8"></span>
-          <span style="background:#E97B6B"></span>
-          <span style="background:#3DA67A"></span>
+    <!-- 9 · Recognition + what changed -->
+    <section class="recognition" id="recognition" aria-labelledby="recognition-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Recognition</p>
+          <h2 id="recognition-title">Recognized by international design juries.</h2>
+        </header>
+        <ul class="award-row reveal">
+          <li><p class="award__name">Red Dot Award</p><p class="award__level">Winner</p><p class="award__meta">Brands &amp; Communication Design 2026</p></li>
+          <li><p class="award__name">MUSE Design Awards</p><p class="award__level">Silver</p><p class="award__meta">Winner</p></li>
+          <li><p class="award__name">iF Design Award</p><p class="award__level">2027</p><p class="award__meta">Entry, results pending</p></li>
+        </ul>
+
+        <div class="change reveal">
+          <h3 class="change__title">What changed since Red Dot 2026</h3>
+          <div class="change__pair">
+            <figure>
+              <div class="phone phone--sm"><img src="assets/final/2026-home.jpg" width="804" height="1748" loading="lazy" alt="2026 home screen: 'Whenever you're ready, we're here', the current location on a map, and recent paths."></div>
+              <figcaption><b>2026</b> A map of her location and a list of past paths.</figcaption>
+            </figure>
+            <figure>
+              <div class="phone phone--sm"><img src="assets/final/home.jpg" width="620" height="1347" loading="lazy" alt="2027 home screen with one action, Walk me home, 13 minutes."></div>
+              <figcaption><b>2027</b> One action, “Walk me home”, with her circle named. Sharing starts only when she walks.</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ FOOTER ============ -->
+    <!-- 10 · Team -->
+    <section class="team" id="team" aria-labelledby="team-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">About &amp; team</p>
+          <h2 id="team-title">Built by women, for women.</h2>
+          <p class="section-sub">Four designers, one brief: a friend who walks you home.</p>
+        </header>
+        <ul class="team__grid reveal">
+          <li>
+            <img src="team/yichun.jpg" alt="Yichun Liu" loading="lazy">
+            <div class="team__meta"><p><b>Yichun Liu</b><span>Design Lead</span></p><a href="https://www.linkedin.com/in/yichundesign/" aria-label="Yichun Liu on LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4V15.9c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.93h-4v-11Z"/></svg></a></div>
+          </li>
+          <li>
+            <img src="team/ziyi.png" alt="Ziyi Yan" loading="lazy">
+            <div class="team__meta"><p><b>Ziyi Yan</b><span>UX &amp; Product Strategy</span></p><a href="https://www.linkedin.com/in/ziyiii" aria-label="Ziyi Yan on LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4V15.9c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.93h-4v-11Z"/></svg></a></div>
+          </li>
+          <li>
+            <img src="team/qingwen.jpg" alt="Qingwen Zheng" loading="lazy">
+            <div class="team__meta"><p><b>Qingwen Zheng</b><span>UX Designer &amp; Researcher</span></p><a href="https://www.linkedin.com/in/alicezhenghz/" aria-label="Qingwen Zheng on LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4V15.9c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.93h-4v-11Z"/></svg></a></div>
+          </li>
+          <li>
+            <img src="team/fan.jpg" alt="Fan Yang" loading="lazy">
+            <div class="team__meta"><p><b>Fan Yang</b><span>Visual Designer</span></p><a href="https://www.linkedin.com/in/fan-y-140516262/" aria-label="Fan Yang on LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4V15.9c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.93h-4v-11Z"/></svg></a></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
-    <div class="container center">
-      <p class="footer__bridge">When the brain stops scanning for danger, it gets to think about everything else.</p>
-      <h2 class="display display--lg" data-split="words">Every woman deserves <em>to think freely.</em></h2>
-      <a href="#top" class="btn btn--dark">
-        <span>Back to top</span>
-        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="footer__meta">
-        <span>SORA · 2026</span>
-        <span>Submitted: Red Dot Design Award · iF Design Award</span>
-      </div>
+    <div class="wrap footer__inner">
+      <p class="footer__line">SORA does not surveil. It accompanies.</p>
+      <p class="footer__meta">SORA · 2026 · Named after <i>soror</i>, Latin for sister. <a href="#top">Back to top</a></p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
