@@ -101,7 +101,7 @@
         hold.classList.remove('is-holding');
         hold.classList.add('is-done');
         label.textContent = 'Held on purpose';
-        note.textContent = 'A second and a half of holding. That’s how SORA knows she means it.';
+        note.textContent = 'Held on purpose. A stray tap never counts.';
         resetTimer = setTimeout(reset, 3200);
       }, 1500);
     };
@@ -109,13 +109,13 @@
       if (done || !hold.classList.contains('is-holding')) return;
       clearTimeout(timer);
       hold.classList.remove('is-holding');
-      note.textContent = 'Let go early, so nothing happens. A stray tap never sends anything.';
+      note.textContent = 'Let go early: nothing happens.';
     };
     var reset = function () {
       done = false;
       hold.classList.remove('is-done');
       label.textContent = 'Hold for help';
-      note.textContent = 'Try it: press and hold.';
+      note.textContent = 'Press and hold';
     };
     hold.addEventListener('pointerdown', function (e) { e.preventDefault(); start(); });
     ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) { hold.addEventListener(ev, end); });
@@ -138,9 +138,9 @@
     var raf = null, t0 = 0, tier = 0;
     var fmt = function (s) { s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); };
     var lines = {
-      1: 'Tier 1: her circle has her live location. Nobody nearby hears a thing.',
-      2: 'Tier 2: her phone and Watch speak a prompt and vibrate.',
-      3: 'At 2:00, SORA contacts emergency services.'
+      1: 'Her circle gets her live location. Nobody nearby hears it.',
+      2: 'Her phone and Watch speak a prompt and vibrate.',
+      3: 'SORA contacts emergency services.'
     };
     var setTier = function (n) {
       if (n === tier) return;
@@ -177,7 +177,7 @@
       raf = requestAnimationFrame(frame);
     });
     okBtn.addEventListener('click', function () {
-      stop('Stopped at ' + cTime.textContent + ' with “I’m OK”. Nothing more happens.');
+      stop('Stopped at ' + cTime.textContent + '. Nothing more happens.');
       startBtn.focus();
     });
   }

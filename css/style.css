@@ -292,7 +292,7 @@ html.js .mode-panel:not([hidden]) { animation: panel-in var(--dur) var(--ease); 
 /* ---------- 5 · quiet help (try it: hold button + escalation clock) ---------- */
 .quiet { padding: var(--section-pad) 0; }
 .quiet__grid { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
-.hold { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 32px; }
+.hold { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 40px; }
 .hold__btn {
   position: relative; overflow: hidden; min-height: 56px; padding: 0 32px; border: 0; border-radius: 999px;
   background: var(--help-bg); color: #9E3A42; font: 500 17px/1 var(--font-body); cursor: pointer;
@@ -304,19 +304,16 @@ html.js .mode-panel:not([hidden]) { animation: panel-in var(--dur) var(--ease); 
 .hold__btn.is-holding .hold__fill { transform: scaleX(1); transition: transform 1.5s linear; }
 .hold__btn.is-done { background: var(--ok-bg); color: #035F4E; }
 .hold__btn.is-done .hold__fill { transform: scaleX(0); }
-.hold__note { font-size: 15px; max-width: 32ch; }
-.actions { margin: 40px 0 0; border-top: 1px solid var(--line); }
-.actions > div { display: grid; grid-template-columns: 9.5em 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-.actions dt { font-family: var(--font-head); font-weight: 600; color: var(--ink); }
-.actions dd { margin: 0; }
+.hold__note { font-size: 15px; max-width: 30ch; color: var(--ink-3); }
+.quiet__also { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-3); }
+.quiet__also b { color: var(--ink); font-weight: 500; }
 
 .clock { --bar: var(--indigo-strong); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-l); padding: clamp(28px, 4vw, 48px); }
 .clock[data-tier="2"] { --bar: #AD4870; }
 .clock[data-tier="3"] { --bar: var(--help); }
-.clock__top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
-.clock__lead { font-family: var(--font-head); font-weight: 600; font-size: 20px; line-height: 1.3; color: var(--ink); max-width: 22ch; }
-.clock__speed { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
-.clock__time { margin-top: 24px; font-family: var(--font-head); font-weight: 600; font-size: clamp(64px, 7vw, 96px); line-height: 1; letter-spacing: -0.045em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.clock__lead { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+.clock__lead span { color: var(--ink-3); text-transform: none; letter-spacing: 0; font-weight: 400; }
+.clock__time { margin-top: 16px; font-family: var(--font-head); font-weight: 600; font-size: clamp(64px, 7vw, 96px); line-height: 1; letter-spacing: -0.045em; color: var(--ink); font-variant-numeric: tabular-nums; }
 .clock__track { position: relative; height: 6px; margin: 28px 8px 0; border-radius: 6px; background: rgba(18, 22, 43, 0.10); }
 .clock__bar { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 6px; background: var(--bar); }
 .clock__mark { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--surface); border: 2px solid rgba(18, 22, 43, 0.25); }
@@ -325,15 +322,15 @@ html.js .mode-panel:not([hidden]) { animation: panel-in var(--dur) var(--ease); 
 .clock__tiers li:nth-child(2) { text-align: center; }
 .clock__tiers li:nth-child(3) { text-align: right; }
 .clock__tiers span { display: block; font: 500 13px/1 var(--font-body); font-variant-numeric: tabular-nums; }
-.clock__tiers b { display: block; margin: 6px 0 4px; font-family: var(--font-head); font-weight: 600; font-size: 16px; color: var(--ink-2); }
+.clock__tiers b { display: block; margin-top: 6px; font-family: var(--font-head); font-weight: 600; font-size: 16px; color: var(--ink-2); }
 .clock__tiers li.is-on { color: var(--ink-2); }
 .clock__tiers li.is-on b { color: var(--ink); }
 .clock__tiers li.is-on span { color: var(--bar); }
-.clock__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.clock__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 .btn--ok { background: #037562; color: #fff; border: 0; cursor: pointer; }
 .btn--ok:hover { background: #035F4E; }
 .clock__actions .btn--ghost { background: transparent; cursor: pointer; }
-.clock__status { margin-top: 16px; font-size: 15px; }
+.clock__status { margin-top: 24px; min-height: 3em; font-size: 15px; color: var(--ink-2); }
 
 /* ---------- 6 · privacy statement ---------- */
 .privacy { padding: var(--section-pad) 0; background: var(--surface); border-block: 1px solid var(--line); }
@@ -385,6 +382,9 @@ code { font: 400 14px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--
 .award__name { font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
 .award__level { font-family: var(--font-head); font-weight: 600; font-size: clamp(36px, 4.4vw, 56px); line-height: 1.1; letter-spacing: -0.03em; color: var(--ink); margin-top: 12px; }
 .award__meta { margin-top: 8px; font-size: 15px; }
+.award__link { display: inline-block; margin-top: 12px; font-size: 14px; color: var(--indigo-ink); text-underline-offset: 3px; }
+.awards-line a { color: inherit; text-decoration: none; }
+.awards-line a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
 .change { margin-top: clamp(64px, 9vw, 112px); display: grid; grid-template-columns: 4fr 7fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
 .change__title { font-size: clamp(26px, 2.6vw, 34px); letter-spacing: -0.02em; max-width: 12ch; }
 .change__pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); }
@@ -456,7 +456,6 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   .mode-panel__devices .watch { --w: 26vw; }
   .tabs { border-radius: var(--radius-m); }
   .tab { padding: 0 14px; font-size: 14px; }
-  .actions > div { grid-template-columns: 1fr; gap: 4px; }
   .clock__tiers { grid-template-columns: 1fr; }
   .clock__tiers li:nth-child(n) { text-align: left; }
   .dark__devices .phone { --w: 42vw; }
